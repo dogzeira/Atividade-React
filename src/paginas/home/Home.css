@@ -1,0 +1,19 @@
+.img-fundo{
+background: color blue;
+
+}
+
+
+.titulo{
+    color: rgb(24, 52, 114);
+    text-align: center;
+    
+}
+
+.img{
+     width:600px;
+     height:600px;
+     display: block;
+     margin: 0 auto;
+}
+
