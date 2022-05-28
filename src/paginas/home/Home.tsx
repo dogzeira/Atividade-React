@@ -9,11 +9,11 @@ function Home() {
   return (
     <>
       <Grid
+        className="img-fundo"
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        style={{ backgroundColor: "#A9A9A9" }}
       >
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
@@ -23,7 +23,7 @@ function Home() {
               color="textPrimary"
               component="h3"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              className="titulo"
             >
               Seja bem vinde!
             </Typography>
@@ -33,34 +33,19 @@ function Home() {
               color="textPrimary"
               component="h5"
               align="center"
-              style={{ color: "white", fontWeight: "bold" }}
+              className="titulo"
             >
               expresse aqui os seus pensamentos e opiniões!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}></Box>
-            <Button
-              variant="outlined"
-              style={{
-                borderColor: "white",
-                backgroundColor: "#3F51B5",
-                color: "white",
-              }}
-            >
+            <Button variant="outlined" className="button">
               Ver Postagens
             </Button>
           </Box>
         </Grid>
-        <Grid item xs={6}>
-          <img
-            src="https://i.imgur.com/H88yIo2.png"
-            alt=""
-            width="500px"
-            height="500px"
-          />
-        </Grid>
-        <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
+        <Grid xs={12} className="postagens"></Grid>
       </Grid>
     </>
   );

@@ -1,0 +1,25 @@
+.box{
+    background-Color: #242222;
+}
+
+.box1{
+    height: "120px";
+}
+
+.box2{
+    color: #ffffff;
+}
+
+.box3{
+    background-Color: #242222;
+    height: "60px";
+}
+
+.box4{
+    font-size: 45px !important;
+    color:#ffffff;
+}
+
+.tamanho-f{
+    margin: 0% !important;
+}

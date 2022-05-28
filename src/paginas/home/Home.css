@@ -1,15 +1,27 @@
-
-
-.titulo{
-    color: rgb(24, 52, 114);
-    text-align: center;
-    
+.img-fundo {
+  width: 100vw;
+  height: calc(100vh - 64px);
+  background-image: url("https://i.imgur.com/ZiUikCb.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
 }
 
-.img{
-     width:600px;
-     height:600px;
-     display: block;
-     margin: 0 auto;
+.caixa {
+  background-color: #ffffff;
 }
 
+.titulo {
+  color: #ffffff !important;
+  font-weight: "bold" !important;
+}
+
+.button {
+  border-color: #ffffff !important;
+  background-color: #ffffff;
+  color: #ffffff !important;
+}
+
+.postagens {
+  background-color: #ffffff;
+}
