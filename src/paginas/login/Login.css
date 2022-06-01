@@ -6,12 +6,18 @@
   font-weight: bold !important;
 }
 
-.background{
-  background-image: url(https://i.imgur.com/j0PZCfH.jpg);
+.background {
+  background-image: url(https://i.imgur.com/vpK3BSa.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
   width: 100vw;
-  min-height: calc(100vh - 64px); 
+  min-height: calc(100vh - 64px);
+}
+
+.cor-button {
+  background-color: #000000 !important;
+}
+P{
+  color:antiquewhite ;
 }

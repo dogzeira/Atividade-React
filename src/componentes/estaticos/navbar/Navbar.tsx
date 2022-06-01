@@ -9,9 +9,9 @@ function Navbar() {
       <AppBar position="static">
         <Toolbar style={{ backgroundColor: "#242222" }} variant="dense">
           <Box className="cursor">
-            <Typography variant="h4" color="inherit">
-              BlogPessoal
-            </Typography>
+            
+              <img src="https://i.imgur.com/ajeO6Na.png" alt="logo"height={80} width={200} />
+            
           </Box>
 
           <Box display="flex" justifyContent="start">
