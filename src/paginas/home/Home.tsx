@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import { light } from "@material-ui/core/styles/createPalette";
 import { Typography, Box, Grid, Button } from "@material-ui/core";
+import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 
 // tag de fragmento <>
 
@@ -45,7 +46,9 @@ function Home() {
             </Button>
           </Box>
         </Grid>
-        <Grid xs={12} className="postagens"></Grid>
+        <Grid xs={12} className="postagens">
+          <TabPostagem />
+        </Grid>
       </Grid>
     </>
   );
