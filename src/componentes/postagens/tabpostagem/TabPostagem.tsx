@@ -10,16 +10,16 @@ function TabPostagem() {
     setValue(newValue);
   }
   return (
-    <>
+    <> 
       <TabContext value={value}>
         <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}>
+          <Tabs className="fundo" centered indicatorColor="secondary" onChange={handleChange}>
             <Tab label="Todas as postagens" value="1" />
             <Tab label="Sobre-nós" value="2" />
           </Tabs>
-        </AppBar>
-        <TabPanel value="1">
-          <Box display="flex" flexWrap="wrap" justifyContent="center">
+        </AppBar>  
+        <TabPanel className="fundo" value="1">
+          <Box display="flex" flexWrap="wrap" justifyContent="left">
             <ListaPostagem />
           </Box>
         </TabPanel>

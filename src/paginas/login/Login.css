@@ -3,7 +3,9 @@
 }
 
 .negrito {
+  
   font-weight: bold !important;
+  
 }
 
 .background {
@@ -20,4 +22,8 @@
 }
 P{
   color:antiquewhite ;
+}
+
+.cor-button2{
+  color: #fcfcfc;
 }

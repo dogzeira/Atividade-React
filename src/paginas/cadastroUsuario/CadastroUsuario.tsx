@@ -56,12 +56,12 @@ function CadastoUsuario() {
   }
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid item xs={6} className="background2"></Grid>
-      <Grid item xs={6} alignItems="center">
+      <Grid item xs={8}className="background2"></Grid>
+      <Grid item xs={4} alignItems="center">
         <Box paddingX={10}>
           <form onSubmit={onSubmit}>
             <Typography
-              variant="h3"
+              variant="h4"
               gutterBottom
               color="textPrimary"
               component="h3"
@@ -74,7 +74,7 @@ function CadastoUsuario() {
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
-              label="nome"
+              label="Nome"
               variant="outlined"
               name="nome"
               margin="normal"
@@ -84,7 +84,7 @@ function CadastoUsuario() {
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="usuario"
+              label="Usuário"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -94,7 +94,7 @@ function CadastoUsuario() {
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
-              label="senha"
+              label="Senha"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -105,7 +105,7 @@ function CadastoUsuario() {
               value={confirmarSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
               id="confirmar senha"
-              label="confirmar senha"
+              label="Confirmar senha"
               variant="outlined"
               name="confirmar senha"
               margin="normal"
@@ -116,7 +116,7 @@ function CadastoUsuario() {
             <Box marginTop={2} textAlign="center">
               <Link to="/login" className="text-decorator-none">
                 <Button variant="contained" className="btcancelar">
-                  <p>Cancelar</p>
+                <p>Cancelar</p>
                 </Button>
               </Link>
               <Button type="submit" variant="contained" className="btcadastrar">

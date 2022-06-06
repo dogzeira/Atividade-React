@@ -26,33 +26,32 @@ function Footer() {
                 variant="h6"
                 align="center"
                 gutterBottom
-                >
-                  Siga-nos nas redes sociais {" "}
-                </Typography>
-              </Box>
-              <Box display="flex" alignItems="center" justifyContent="center">
-                <a href="https://www.linkedin.com/in/doug-rocha/" target="_blank">
-                  <LinkedInIcon className="box4" />
-                </a>
-              </Box>
+              >
+                Siga-nos nas redes sociais{" "}
+              </Typography>
             </Box>
-            <Box className="box3">
-              <Box paddingTop={1}>
-                <Typography variant="subtitle2" align="center" className="box2">
-                  © 2022 Copyright:
-                </Typography>
-              </Box>
-              <Box>
-                <Typography variant="subtitle2" className="box2" align="center">
-                  douglasdanilobutu13@gmail.com
-                </Typography>
-              </Box>
+            <Box display="flex" alignItems="center" justifyContent="center">
+              <a href="https://www.linkedin.com/in/doug-rocha/" target="_blank">
+                <LinkedInIcon className="box4" />
+              </a>
             </Box>
-          </Grid>
+          </Box>
+          <Box className="box3">
+            <Box paddingTop={1}>
+              <Typography variant="subtitle2" align="center" className="box2">
+                © 2022 Copyright:
+              </Typography>
+            </Box>
+            <Box>
+              <Typography variant="subtitle2" className="box2" align="center">
+                douglasdanilobutu13@gmail.com
+              </Typography>
+            </Box>
+          </Box>
         </Grid>
-      </>
-    );
-  }
-  
-  export default Footer;
-                
+      </Grid>
+    </>
+  );
+}
+
+export default Footer;

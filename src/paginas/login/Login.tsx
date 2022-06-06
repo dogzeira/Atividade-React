@@ -100,13 +100,13 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Link to="/cadastrousuario">
+            <Link className="text-decorator-none cor-button2" to="/cadastrousuario">
               <Typography
                 variant="subtitle1"
                 gutterBottom
                 align="center"
                 className="negrito"
-              >
+                >
                 cadastre-se
               </Typography>
             </Link>

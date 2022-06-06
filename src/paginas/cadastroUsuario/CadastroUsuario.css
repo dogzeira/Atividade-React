@@ -1,5 +1,11 @@
+.text-decorator-none {
+  text-decoration: none;
+  color: #000000;
+}
+
 .background2 {
- background-color: #000000;
+  background-color: #000000;
+  background-image: url(https://i.imgur.com/60iD1UB.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -18,9 +24,8 @@
 }
 
 .btcadastrar {
-  background-color: #000000 !important;
-  
+  background-color: #4a36ca !important;
 }
-P{
-  color: antiquewhite;
+P {
+  color: #fcfcfc;
 }
