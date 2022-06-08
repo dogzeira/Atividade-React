@@ -1,5 +1,5 @@
 .text-decorator-none {
-  text-decoration: none;
+  text-decoration: none ;
 }
 
 .negrito {
@@ -9,12 +9,12 @@
 }
 
 .background {
-  background-image: url(https://i.imgur.com/vpK3BSa.jpg);
+  background-image: url(https://i.imgur.com/vpK3BSa.jpg) ;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   width: 100vw;
-  min-height: calc(100vh - 64px);
+  height:100vh;
 }
 
 .cor-button {
@@ -25,5 +25,5 @@ P{
 }
 
 .cor-button2{
-  color: #fcfcfc;
+  color: #000000;
 }

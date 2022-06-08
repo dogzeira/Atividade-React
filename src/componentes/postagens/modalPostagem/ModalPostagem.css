@@ -4,6 +4,7 @@
 }
 
 .btnModal{
-    border-color: white !important;
-    background-color: white !important;
+    border-color: #000000 !important;
+    background-color: #e21a00dd !important;
+    color: #000000 !important;
 }

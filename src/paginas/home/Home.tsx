@@ -4,23 +4,23 @@ import { light } from "@material-ui/core/styles/createPalette";
 import { Typography, Box, Grid, Button } from "@material-ui/core";
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostagem";
-import { useNavigate } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
+import { Link, useNavigate } from "react-router-dom";
+import { TokenState } from "../../store/tokens/tokensReducer";
+import { useSelector } from "react-redux";
 
 // tag de fragmento <>
 
 function Home() {
-  
   let navigate = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
-  
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
+
   useEffect(() => {
-   
     if (token == "") {
       alert("Você precisa estar logado");
       navigate("/login");
     }
-  
   }, [token]);
   return (
     <>
@@ -31,7 +31,7 @@ function Home() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid alignItems="center" item xs={6}>
+        <Grid alignItems="flex-end" item xs={6}>
           <Box paddingX={20}>
             <Typography
               variant="h3"
@@ -44,24 +44,31 @@ function Home() {
               Seja bem vinde!
             </Typography>
             <Typography
-              variant="h5"
+              variant="h6"
               gutterBottom
               color="textPrimary"
               component="h5"
               align="center"
               className="titulo"
             >
-              expresse aqui os seus pensamentos e opiniões!
+              expresse aqui os seus pensamentos e opiniões sobre esse anime
+              magnífico!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
-            <Button variant="outlined" className="button">
-              Ver Postagens
-            </Button>
+            <Link className="text-decoration" to="/posts">
+              <Button variant="outlined" className="button">
+                Ver Postagens
+              </Button>
+            </Link>
           </Box>
+        </Grid>
+        {/* importante */}
+        <Grid item xs={12}>
+          <Box padding={10}></Box>
         </Grid>
         <Grid xs={12} className="postagens">
           <TabPostagem />

@@ -61,7 +61,7 @@ function CadastoUsuario() {
         <Box paddingX={10}>
           <form onSubmit={onSubmit}>
             <Typography
-              variant="h4"
+              variant="h3"
               gutterBottom
               color="textPrimary"
               component="h3"

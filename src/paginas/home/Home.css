@@ -1,6 +1,6 @@
 .img-fundo {
   width: 100vw;
-  height: calc(100vh - 64px);
+  height: 100vh;
   background-image: url(https://i.imgur.com/lbVj3x3.jpg);
   background-repeat: no-repeat;
   background-position: bottom;
@@ -17,11 +17,16 @@
 }
 
 .button {
-  border-color: #ffffff !important;
-  background-color: #ffffff;
-  color: #ffffff !important;
+  border-color: #000000 !important;
+  background-color: #cdc21d !important;
+  color: #000000 !important;
 }
 
 .postagens {
   background-color: #ffffff;
 }
+
+.text-decoration {
+  text-decoration: none;
+}
+

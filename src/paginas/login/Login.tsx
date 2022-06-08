@@ -1,15 +1,17 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { Grid, Box, Typography, TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { login } from "../../services/Service";
 import "./Login.css";
 import UserLogin from "../../models/UseLogin";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/actions";
 
 function Login() {
-  let history = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [token, setToken] = useState("");
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
@@ -25,8 +27,8 @@ function Login() {
   }
   useEffect(() => {
     if (token != "") {
-      history("/home");
-     
+      dispatch(addToken(token));
+      navigate("/home");
     }
   }, [token]);
 
@@ -35,8 +37,7 @@ function Login() {
 
     try {
       await login(`/usuarios/logar`, userLogin, setToken);
-
-      alert("Pirata logado com sucesso!");
+      // alert("Pirata logado com sucesso!");
     } catch {
       alert("Algo deu errado pirata, tente novamente!");
     }
@@ -100,13 +101,16 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Link className="text-decorator-none cor-button2" to="/cadastrousuario">
+            <Link
+              className="text-decorator-none cor-button2"
+              to="/cadastrousuario"
+            >
               <Typography
                 variant="subtitle1"
                 gutterBottom
                 align="center"
                 className="negrito"
-                >
+              >
                 cadastre-se
               </Typography>
             </Link>
