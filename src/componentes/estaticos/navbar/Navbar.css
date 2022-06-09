@@ -1,6 +1,11 @@
-.cursor {
+.logout {
   cursor: pointer;
-  color: #ffffff;
+  color: #e21a00dd;
   text-decoration: none;
 }
 
+.cursor {
+  cursor: pointer;
+  color: #faf9f9;
+  text-decoration: none;
+}

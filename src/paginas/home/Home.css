@@ -1,10 +1,7 @@
 .img-fundo {
-  width: 100vw;
-  height: 100vh;
   background-image: url(https://i.imgur.com/lbVj3x3.jpg);
   background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: cover;
+  background-size: 100vw 90vh;
 }
 
 .caixa {
@@ -29,4 +26,3 @@
 .text-decoration {
   text-decoration: none;
 }
-

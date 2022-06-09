@@ -14,6 +14,7 @@ import "./ListaPostagem.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -24,7 +25,16 @@ function ListaPostagem() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.error("Pirata, é necessario estar logado", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       navigate("/login");
     }
   }, [token]);
@@ -45,7 +55,7 @@ function ListaPostagem() {
     <>
       {posts.map((post) => (
         <Box m={2}>
-          <Card variant="outlined">
+          <Card className="fundo-post" variant="outlined">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
                 Postagens
@@ -53,10 +63,10 @@ function ListaPostagem() {
               <Typography variant="h5" component="h2">
                 {post.titulo}
               </Typography>
-              <Typography variant="body2" component="p">
+              <Typography className="cor-post" variant="body2" component="p">
                 {post.texto}
               </Typography>
-              <Typography variant="body2" component="p">
+              <Typography className="cor-post" variant="body2" component="p">
                 {post.tema?.descricao}
               </Typography>
             </CardContent>
@@ -68,10 +78,9 @@ function ListaPostagem() {
                 >
                   <Box mx={1}>
                     <Button
+                      className="cor-botao-post2"
                       variant="contained"
-                      className="marginLeft"
                       size="small"
-                      color="primary"
                     >
                       atualizar
                     </Button>
@@ -82,7 +91,11 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
+                    <Button
+                      className="cor-botao-post"
+                      variant="contained"
+                      size="small"
+                    >
                       deletar
                     </Button>
                   </Box>

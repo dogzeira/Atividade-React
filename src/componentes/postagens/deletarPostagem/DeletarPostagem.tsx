@@ -1,24 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
-import './DeletarPostagem.css';
-import Postagem from '../../../models/Postagem';
-import { buscaId, deleteId } from '../../../services/Service';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
-
+import React, { useEffect, useState } from "react";
+import {
+  Typography,
+  Button,
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+} from "@material-ui/core";
+import "./DeletarPostagem.css";
+import Postagem from "../../../models/Postagem";
+import { buscaId, deleteId } from "../../../services/Service";
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function DeletarPostagem() {
   let Navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const [post, setPosts] = useState<Postagem>()
+  const [post, setPosts] = useState<Postagem>();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
   );
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.error("Pirata, é necessario estar logado", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       Navigate("/login");
     }
   }, [token]);
@@ -37,13 +53,24 @@ function DeletarPostagem() {
     });
   }
   function sim() {
-    Navigate("/posts");//blog pessoal
-    deleteId(`/postagens/${id}`, {// back end
+    Navigate("/posts"); //blog pessoal
+    deleteId(`/postagens/${id}`, {
+      // back end
       headers: {
         Authorization: token,
       },
     });
-    alert("Postagem deletada com sucesso");
+
+    toast.success("Postagem deletada com sucesso!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+    });
   }
 
   function nao() {
@@ -53,29 +80,26 @@ function DeletarPostagem() {
   return (
     <>
       <Box m={2}>
-        <Card variant="outlined" >
+        <Card variant="outlined">
           <CardContent>
-            <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem:
-              </Typography>
-              <Typography color="textSecondary" >
-              {post?.titulo}
-              </Typography>
-            </Box>
-
+            <Card className="fundooo">
+              <Box justifyContent="center">
+                <Typography gutterBottom>Deseja deletar a Postagem:</Typography>
+                <Typography>{post?.titulo}</Typography>
+              </Box>
+            </Card>
           </CardContent>
           <CardActions>
-            <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
+            <Box display="flex" justifyContent="start" ml={1.0} mb={2}>
               <Box mx={2}>
-              <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
-                Sim
-              </Button>
+                <Button  onClick={sim} className="sim" variant="contained" size="large">
+                  Sim
+                </Button>
               </Box>
-              <Box>
-              <Button onClick={nao} variant="contained" size='large' color="secondary">
-                Não
-              </Button>
+              <Box mx={2}>
+                <Button onClick={nao} className="nao" variant="contained" size="large">
+                  Não
+                </Button>
               </Box>
             </Box>
           </CardActions>
@@ -86,6 +110,10 @@ function DeletarPostagem() {
 }
 export default DeletarPostagem;
 
-function setTema(arg0: string, setTema: any, arg2: { headers: { Authorization: string; }; }) {
-  throw new Error('Function not implemented.');
+function setTema(
+  arg0: string,
+  setTema: any,
+  arg2: { headers: { Authorization: string } }
+) {
+  throw new Error("Function not implemented.");
 }

@@ -24,7 +24,7 @@ function TabPostagem() {
           </Tabs>
         </AppBar>
         <TabPanel className="fundo" value="1">
-          <Box display="flex" flexWrap="wrap" justifyContent="left">
+          <Box display="flex" flexWrap="wrap" justifyContent="center">
             <ListaPostagem />
           </Box>
         </TabPanel>
@@ -49,8 +49,8 @@ function TabPostagem() {
             Monkey D. Luffy. O garoto, que possui um corpo elástico, pretende se
             tornar o Rei dos Piratas e para isso deve encontrar o One Piece,
             tesouro misterioso capaz de torná-lo imbatível, segundo as lendas.
-            <br/>
-            <br/>
+            <br />
+            <br />
             Os Piratas do Chapéu de Palha, como é conhecido o grupo, acabam
             vivendo momentos extremamente memoráveis. One Piece consegue unir
             bem temas como família, perda e perseguição de sonhos, resultando em

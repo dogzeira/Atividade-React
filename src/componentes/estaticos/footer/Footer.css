@@ -1,25 +1,30 @@
-.box{
-    background-Color: #040303;
+.box {
+  background-color: #040303;
 }
 
-.box1{
-    height: "120px";
+.box1 {
+  height: "120px";
 }
 
-.box2{
-    color: #ffffff;
+.box2 {
+  color: #ffffff;
 }
 
-.box3{
-    background-Color: #040303;
-    height: "60px";
+.box3 {
+  background-color: #040303;
+  height: "60px";
+  margin: 10px;
 }
 
-.box4{
-    font-size: 45px !important;
-    color:#ffffff;
+.box4 {
+  font-size: 45px !important;
+  color: #ffffff;
 }
 
-.tamanho-f{
-    margin: 0% !important;
+a {
+  margin-right: 3px;
+}
+
+.tamanho-f {
+  margin: 0% !important;
 }

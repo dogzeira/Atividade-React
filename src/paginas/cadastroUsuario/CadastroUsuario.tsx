@@ -8,6 +8,7 @@ import { cadastroUsuario } from "../../services/Service";
 import { Grid, Box, Typography, Button, TextField } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./CadastroUsuario.css";
+import { toast } from "react-toastify";
 
 function CadastoUsuario() {
   let navigate = useNavigate();
@@ -28,10 +29,9 @@ function CadastoUsuario() {
 
   useEffect(() => {
     if (userResult.id != 0) {
-      navigate("/login")
-     
+      navigate("/login");
     }
-  }, [userResult])
+  }, [userResult]);
 
   function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
     setConfirmarSenha(e.target.value);
@@ -47,16 +47,32 @@ function CadastoUsuario() {
     e.preventDefault();
     if (confirmarSenha == user.senha) {
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      alert("Pirata cadastrado com sucesso!");
+      toast.success("Pirata, cadastrado com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     } else {
-      alert(
-        "Algo de errado pirata, tente novamente!"
-      );
+      toast.error("Algo de errado pirata, tente novamente!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     }
   }
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid item xs={8}className="background2"></Grid>
+      <Grid item xs={8} className="background2"></Grid>
       <Grid item xs={4} alignItems="center">
         <Box paddingX={10}>
           <form onSubmit={onSubmit}>
@@ -84,7 +100,7 @@ function CadastoUsuario() {
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="Usuário"
+              label="E-mail"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -103,7 +119,9 @@ function CadastoUsuario() {
             />
             <TextField
               value={confirmarSenha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                confirmarSenhaHandle(e)
+              }
               id="confirmar senha"
               label="Confirmar senha"
               variant="outlined"
@@ -116,7 +134,7 @@ function CadastoUsuario() {
             <Box marginTop={2} textAlign="center">
               <Link to="/login" className="text-decorator-none">
                 <Button variant="contained" className="btcancelar">
-                <p>Cancelar</p>
+                  <p>Cancelar</p>
                 </Button>
               </Link>
               <Button type="submit" variant="contained" className="btcadastrar">

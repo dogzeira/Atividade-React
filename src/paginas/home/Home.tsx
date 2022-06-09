@@ -7,6 +7,7 @@ import ModalPostagem from "../../componentes/postagens/modalPostagem/ModalPostag
 import { Link, useNavigate } from "react-router-dom";
 import { TokenState } from "../../store/tokens/tokensReducer";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 // tag de fragmento <>
 
@@ -18,7 +19,16 @@ function Home() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.error("Pirata, é necessario estar logado", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
       navigate("/login");
     }
   }, [token]);

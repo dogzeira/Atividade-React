@@ -7,6 +7,7 @@ import UserLogin from "../../models/UseLogin";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 function Login() {
   let navigate = useNavigate();
@@ -37,9 +38,27 @@ function Login() {
 
     try {
       await login(`/usuarios/logar`, userLogin, setToken);
-      // alert("Pirata logado com sucesso!");
+      toast.success("Pirata logado com sucesso!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     } catch {
-      alert("Algo deu errado pirata, tente novamente!");
+      toast.error("Algo de errado pirata, tente novamente!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
     }
   }
 
@@ -51,8 +70,8 @@ function Login() {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid alignItems="center" xs={6}>
-        <Box paddingX={20}>
+      <Grid alignItems="center" xs={4}>
+        <Box className="fundo-login" paddingX={10}>
           <form onSubmit={onSubmit}>
             <Typography
               variant="h3"
@@ -62,13 +81,13 @@ function Login() {
               align="center"
               className="negrito"
             >
-              Entrar
+              Entrar:
             </Typography>
             <TextField
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
               value={userLogin.usuario}
-              label="usuário"
+              label="E-mail"
               variant="outlined"
               name="usuario"
               margin="normal"
