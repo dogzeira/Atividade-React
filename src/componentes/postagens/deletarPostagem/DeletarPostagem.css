@@ -1,14 +1,17 @@
-.sim{
-    background-color: #cdc21d !important;
+.sim {
+  background-color: #cdc21d !important;
   color: #000000 !important;
 }
 
-.nao{
-    background-color: #e21a00dd !important;
-    color: #000000 !important;
+.nao {
+  background-color: #e21a00dd !important;
+  color: #000000 !important;
 }
 
-.fundooo{
-    background-color: #171616 !important;
-    color: #b3ac42 !important;
+.fundo-deletar {
+  background-color: #171616 !important;
+}
+
+.letra {
+  color: #b3ac42 !important;
 }

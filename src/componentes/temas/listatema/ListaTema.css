@@ -1,3 +1,25 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.atualizar {
+    background-color: #cdc21d !important;
+    color: #000000 !important;
+  }
+  
+  .deletar {
+    background-color: #e21a00dd !important;
+    color: #000000 !important;
+  }
+
+  .fundo-tema {
+    background-color: #171616 !important;
+  }
+  
+  .letra {
+    color: #b3ac42 !important;
+  }
+  
+  .cor{
+    color:#f0f8ff;
+  }

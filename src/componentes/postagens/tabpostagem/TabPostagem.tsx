@@ -13,12 +13,7 @@ function TabPostagem() {
     <>
       <TabContext value={value}>
         <AppBar position="static">
-          <Tabs
-            className="fundo"
-            centered
-            indicatorColor="secondary"
-            onChange={handleChange}
-          >
+          <Tabs className="fundo" centered onChange={handleChange}>
             <Tab label="Todas as postagens" value="1" />
             <Tab label="Sobre-nós" value="2" />
           </Tabs>
@@ -32,19 +27,13 @@ function TabPostagem() {
           <Typography
             variant="h5"
             gutterBottom
-            color="textPrimary"
             component="h5"
             align="center"
             className="titulo"
           >
             Sobre-nós
           </Typography>
-          <Typography
-            variant="body1"
-            gutterBottom
-            color="textPrimary"
-            align="justify"
-          >
+          <Typography className="cor-sobre"variant="body1" gutterBottom align="justify">
             One Piece segue a história de um grupo de piratas liderado por
             Monkey D. Luffy. O garoto, que possui um corpo elástico, pretende se
             tornar o Rei dos Piratas e para isso deve encontrar o One Piece,

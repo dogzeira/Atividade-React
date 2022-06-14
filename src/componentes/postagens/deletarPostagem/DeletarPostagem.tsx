@@ -80,11 +80,11 @@ function DeletarPostagem() {
   return (
     <>
       <Box m={2}>
-        <Card variant="outlined">
+        <Card  className="fundo-deletar" variant="outlined">
           <CardContent>
-            <Card className="fundooo">
+            <Card className=" fundo-deletar">
               <Box justifyContent="center">
-                <Typography gutterBottom>Deseja deletar a Postagem:</Typography>
+                <Typography className="letra" gutterBottom>Deseja deletar a Postagem:</Typography>
                 <Typography>{post?.titulo}</Typography>
               </Box>
             </Card>
