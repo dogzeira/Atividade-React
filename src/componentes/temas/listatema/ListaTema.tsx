@@ -53,7 +53,7 @@ function ListaTema() {
   return (
     <>
       {temas.map((tema) => (
-        <Box m={2}>
+        <Box m={2} style={{ minHeight: "100vh" }}>
           <Card className="fundo-tema" variant="outlined">
             <CardContent>
               <Typography className="letra" gutterBottom>

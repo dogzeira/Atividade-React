@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
-
+import "./CadastroTema.css";
 
 function CadastroTema() {
   let Navigate = useNavigate();
@@ -78,11 +78,11 @@ function CadastroTema() {
           theme: "colored",
           progress: undefined,
         });
-        
+
         // CATCH: Caso tenha algum erro, pegue esse erro e mande uma msg para o usuário
       } catch (error) {
         console.log(`Error: ${error}`);
-        
+
         toast.error("Pirata, verifique a quantidade minima de caracteres", {
           position: "top-right",
           autoClose: 2000,
@@ -130,15 +130,15 @@ function CadastroTema() {
     Navigate("/temas");
   }
   return (
-    <Container maxWidth="sm" className="topo">
+    <Container maxWidth="sm" className="topo" style={{ minHeight: "100vh" }}>
       <form onSubmit={onSubmit}>
         <Typography
+          className="margin-formulario"
           variant="h3"
-          color="textSecondary"
           component="h1"
           align="center"
         >
-          Formulário de cadastro tema
+          Cadastrar temas
         </Typography>
         <TextField
           value={tema.descricao}
@@ -150,8 +150,8 @@ function CadastroTema() {
           margin="normal"
           fullWidth
         />
-        <Button type="submit" variant="contained" color="primary">
-          Finalizar
+        <Button className="botao">    
+          <p className="texto-botao">Finalizar</p>
         </Button>
       </form>
     </Container>

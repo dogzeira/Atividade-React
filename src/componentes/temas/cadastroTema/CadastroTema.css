@@ -1,4 +1,23 @@
 
 .topo{
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
+
+.margin-formulario{
+    margin-top: 8rem !important;
+}
+
+.botao{
+    background-color: #141111 !important;
+    width: 200px;
+    
+    
+}
+
+.texto-botao{
+  color: #f5f5f5;
+}
+

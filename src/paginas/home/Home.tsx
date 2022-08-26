@@ -35,8 +35,8 @@ function Home() {
   return (
     <>
       <Grid
-        className="img-fundo"
         container
+        className="img-fundo"
         direction="row"
         justifyContent="center"
         alignItems="center"
